@@ -12,7 +12,7 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: #f4f4f4;
+            transition: background-color 0.5s ease; /* Smooth background transition */
         }
 
         .container {
@@ -98,15 +98,33 @@
             }
         ];
 
+
         const factNumberDisplay = document.getElementById('fact-number');
         const factTextDisplay = document.getElementById('fact-text');
         const playButton = document.getElementById('play-button');
+        const body = document.body;
+
+
+        const backgroundColors = {
+            1: '#f0f8ff',  // AliceBlue
+            2: '#faebd7',  // AntiqueWhite
+            3: '#00ffff',  // Aqua
+            4: '#7fffd4',  // Aquamarine
+            5: '#f0ffff',  // Azure
+            6: '#f5f5dc',  // Beige
+            7: '#ffe4c4',  // Bisque
+            8: '#000000',  // Black
+            9: '#ffebcd',  // BlanchedAlmond
+            10: '#0000ff', // Blue
+        };
+
 
         playButton.addEventListener('click', () => {
             const randomIndex = Math.floor(Math.random() * facts.length);
             const randomFact = facts[randomIndex];
             factNumberDisplay.textContent = `Fact #${randomFact.number}`;
             factTextDisplay.textContent = randomFact.fact;
+             body.style.backgroundColor = backgroundColors[randomFact.number] || '#f4f4f4';
         });
     </script>
 </body>
