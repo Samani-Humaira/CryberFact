@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity Facts</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #fact-container {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #4cae4c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Cybersecurity Facts</h1>
+        <div id="fact-container">
+            <p id="fact-number"></p>
+            <p id="fact-text"></p>
+        </div>
+        <button id="play-button">Show Fact</button>
+    </div>
+    <script>
+        const facts = [
+            {
+                "number": 1,
+                "fact": "Cyberattacks are increasing: The frequency and sophistication of cyberattacks are constantly rising, making cybersecurity more critical than ever."
+            },
+            {
+                "number": 2,
+                "fact": "Data breaches are costly: Data breaches can lead to significant financial losses, including legal fees, fines, and damage to reputation."
+            },
+            {
+                "number": 3,
+                "fact": "Phishing is a common tactic: Phishing attacks, which use deceptive emails or messages to steal information, are one of the most prevalent types of cyberattacks."
+            },
+            {
+                "number": 4,
+                "fact": "Ransomware is on the rise: Ransomware attacks, which encrypt data and demand payment for its release, are becoming increasingly common and impactful."
+            },
+            {
+                "number": 5,
+                "fact": "Human error is a major factor: Many security incidents result from human error, such as weak passwords, clicking on malicious links, or mishandling sensitive information."
+            },
+            {
+                "number": 6,
+                "fact": "IoT devices are vulnerable: The growing number of Internet of Things (IoT) devices introduces new security risks due to their often weak security measures."
+            },
+            {
+                "number": 7,
+                "fact": "Mobile devices are targets: Mobile devices are frequently targeted by cybercriminals through malware, phishing, and other attacks."
+            },
+            {
+                "number": 8,
+                "fact": "Cybersecurity is a shared responsibility: Cybersecurity is not just the responsibility of IT professionals; everyone needs to be aware of security best practices."
+            },
+            {
+                "number": 9,
+                "fact": "Cybersecurity requires continuous learning: The cybersecurity landscape is constantly evolving, so it's vital to stay informed about the latest threats and trends."
+            },
+            {
+                "number": 10,
+                "fact": "Proactive security is essential: Implementing proactive security measures, such as regular security audits and employee training, is crucial for preventing successful cyberattacks."
+            }
+        ];
+
+        const factNumberDisplay = document.getElementById('fact-number');
+        const factTextDisplay = document.getElementById('fact-text');
+        const playButton = document.getElementById('play-button');
+
+        playButton.addEventListener('click', () => {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            const randomFact = facts[randomIndex];
+            factNumberDisplay.textContent = `Fact #${randomFact.number}`;
+            factTextDisplay.textContent = randomFact.fact;
+        });
+    </script>
+</body>
+</html>
